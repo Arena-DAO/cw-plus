@@ -20,20 +20,18 @@ exclude = [
 crate-type = ["cdylib", "rlib"]
 
 [features]
-# for more explicit tests, cargo test --features=backtraces
-backtraces = ["cosmwasm-std/backtraces"]
 # use library feature to disable all instantiate/execute/query exports
 library = []
 
 [dependencies]
-cosmwasm-schema = { version = "1.4.0" }
-cw-utils = "1.0.1"
-abstract-cw2 = { version = "1.2.2", path = "../../packages/cw2" }
-abstract-cw4 = { version = "1.2.2", path = "../../packages/cw4" }
-cw-controllers = { version = "1.1.2", path = "../../packages/controllers" }
-cw-storage-plus = "1.1.0"
-cosmwasm-std = { version = "1.4.0" }
+cosmwasm-schema = { version = "2.2.2" }
+cw-utils = "2.0.0"
+abstract-cw2 = { path = "../../packages/cw2" }
+abstract-cw4 = { path = "../../packages/cw4" }
+cw-controllers = { path = "../../packages/controllers" }
+cw-storage-plus = "2.0.0"
+cosmwasm-std = { version = "2.2.2" }
 schemars = "0.8.15"
 serde = { version = "1.0.188", default-features = false, features = ["derive"] }
-thiserror = { version = "1.0.49" }
+thiserror = { version = "2.0.12" }
 cw-orch = { workspace = true }

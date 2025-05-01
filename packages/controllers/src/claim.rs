@@ -26,10 +26,10 @@ impl Claim {
 }
 
 // TODO: revisit design (split each claim on own key?)
-pub struct Claims<'a>(Map<'a, &'a Addr, Vec<Claim>>);
+pub struct Claims<'a>(Map<&'a Addr, Vec<Claim>>);
 
-impl<'a> Claims<'a> {
-    pub const fn new(storage_key: &'a str) -> Self {
+impl Claims<'_> {
+    pub const fn new(storage_key: &'static str) -> Self {
         Claims(Map::new(storage_key))
     }
 

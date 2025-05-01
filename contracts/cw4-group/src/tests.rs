@@ -1,3 +1,5 @@
+#![allow(deprecated)]
+
 use abstract_cw4::{member_key, Member, MemberChangedHookMsg, MemberDiff, TOTAL_KEY};
 use cosmwasm_std::testing::{mock_dependencies, mock_env, mock_info};
 use cosmwasm_std::{from_json, Addr, Api, DepsMut, OwnedDeps, Querier, Storage, SubMsg};

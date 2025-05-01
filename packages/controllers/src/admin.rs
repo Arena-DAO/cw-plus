@@ -26,11 +26,11 @@ pub enum AdminError {
 }
 
 // state/logic
-pub struct Admin<'a>(Item<'a, Option<Addr>>);
+pub struct Admin(Item<Option<Addr>>);
 
 // this is the core business logic we expose
-impl<'a> Admin<'a> {
-    pub const fn new(namespace: &'a str) -> Self {
+impl Admin {
+    pub const fn new(namespace: &'static str) -> Self {
         Admin(Item::new(namespace))
     }
 
@@ -99,6 +99,7 @@ impl<'a> Admin<'a> {
 
 #[cfg(test)]
 mod tests {
+    #![allow(deprecated)]
     use super::*;
 
     use cosmwasm_std::testing::{mock_dependencies, mock_info};
